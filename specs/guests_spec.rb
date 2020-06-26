@@ -25,17 +25,22 @@ class GuestsTest < MiniTest::Test
         assert_equal(50, @guest2.money)
     end
 
-    def test_sufficient_funds__true()
+    def test_sufficient_funds__true
         assert_equal(true, @guest2.sufficient_funds(@room1))
     end
 
-    def test_sufficient_funds__false()
+    def test_sufficient_funds__false
         assert_equal(false, @guest1.sufficient_funds(@room2))
     end
 
-    def test_pay_for_room
+    def test_pay_for_room__sufficient_funds
         @guest3.pay_for_room(@room2)
         assert_equal(10, @guest3.money())
+    end
+
+    def test_cannot_pay_for_room
+        @guest1.pay_for_room(@room2)
+        assert_equal(15, @guest1.money())
     end
 
 end

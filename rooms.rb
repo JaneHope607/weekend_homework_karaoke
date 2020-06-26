@@ -3,7 +3,7 @@ class Rooms
     attr_reader :name, :price, :capacity
     attr_accessor :song_list, :guests
 
-    def initialize(name_room, price, capacity, song_list, people)
+    def initialize(name_room, price, capacity, song_list, guests)
         @name_room = name
         @price = price
         @capacity = capacity
@@ -19,12 +19,12 @@ class Rooms
         @song_list.size
     end
 
-    def check_in_guest(guest)
+    # def check_in_guests(guest)
+    #     if 
+    # end
 
-    end
+    # def check_out_guests(guest)
 
-    def check_out_guest(guest)
-
-    end
+    # end
 
 end
