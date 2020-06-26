@@ -1,13 +1,13 @@
 class Rooms
 
-    attr_reader :name, :price, :capacity
+    attr_reader :name_room, :price, :capacity
     attr_accessor :song_list, :guests
 
     def initialize(name_room, price, capacity, song_list, guests)
-        @name_room = name
+        @name_room = name_room
         @price = price
         @capacity = capacity
-        @song_list = []
+        @song_list = song_list
         @guests = []
     end
 
@@ -16,15 +16,15 @@ class Rooms
     end
 
     def count_songs()
-        @song_list.size
+        return @song_list.size
     end
 
-    # def check_in_guests(guest)
-    #     if 
-    # end
+    def count_guests()
+        return @guests.size
+    end
 
-    # def check_out_guests(guest)
-
+    # def check_in_guests(guest,room)
+    #     if guest.sufficient_funds(room)
     # end
 
 end

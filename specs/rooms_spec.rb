@@ -4,14 +4,13 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 require_relative("../rooms")
 require_relative("../guests")
+require_relative("../songs")
 
 class RoomsTest < MiniTest::Test
 
-
     def setup
-        @room1 = Rooms.new("Superstar", 15, 2, @song_list, @people)
-        @room2 = Rooms.new("Queen", 20, 3, @song_list, @people)
-        @room3 = Rooms.new("Rockstar", 25, 5, @song_list, @people)
+        @room1 = Rooms.new("Superstar", 15, 2, @song_list, @guests)
+        @room2 = Rooms.new("Queen", 20, 3, @song_list, @guests)
 
         @guest1 = Guests.new("Jess", 15)
         @guest2 = Guests.new("Robert", 50)
@@ -21,17 +20,17 @@ class RoomsTest < MiniTest::Test
         @song2 = Songs.new("Fernando")
         @song3 = Songs.new("Dancing Queen")
 
+        @song_list = [@song1, @song2, @song3]
     end
 
-    def test test_add_more_songs
+    def test_add_more_songs
         @room1.add_more_songs(@song1)
         result = ["Wonderwall"]
         assert_equal(result, @room1.song_list)
     end
 
-    # def test_check_in_guests
-
-    # end
-
+    def test_count_guests
+        assert_equal(0, @room2.count_guests())
+    end
 
 end

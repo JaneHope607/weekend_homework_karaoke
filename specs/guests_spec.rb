@@ -10,7 +10,6 @@ class GuestsTest < MiniTest::Test
     def setup
         @room1 = Rooms.new("Superstar", 15, 5, @song_list, @people)
         @room2 = Rooms.new("Queen", 20, 10, @song_list, @people)
-        @room3 = Rooms.new("Rockstar", 25, 15, @song_list, @people)
 
         @guest1 = Guests.new("Jess", 15)
         @guest2 = Guests.new("Robert", 50)
