@@ -28,7 +28,7 @@ class Rooms
     end
 
     def check_in_guests(guest, room)
-        if guest_can_afford(guest, room)
+        if (guest_can_afford(guest, room) && has_capacity)
             @guests.push(guest)
             guest.pay_for_room(room)
         end
