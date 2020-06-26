@@ -23,8 +23,19 @@ class Rooms
         return @guests.size
     end
 
-    # def check_in_guests(guest,room)
-    #     if guest.sufficient_funds(room)
+    # def check_capacity
     # end
+
+    def guest_can_afford(guest, room)
+        return guest.sufficient_funds(room)
+    end
+
+
+    def check_in_guests(guest, room)
+        if guest_can_afford(guest, room)
+            @guests.push(guest)
+        end
+        return "Sorry this rooms is unavailable for you."
+    end
 
 end

@@ -37,4 +37,10 @@ class RoomsTest < MiniTest::Test
         assert_equal(result, @room1.song_list)
     end
 
+    def test_check_in_guests
+        @room1.check_in_guests(@guest2, @room1)
+        @room1.check_in_guests(@guest3, @room1)
+        assert_equal(2, @room1.count_guests())
+    end
+
 end
