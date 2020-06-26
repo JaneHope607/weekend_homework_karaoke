@@ -32,7 +32,7 @@ class RoomsTest < MiniTest::Test
     end
 
     def test_add_songs
-        @room1.add_songs(@song1)
+        @room1.add_songs(@song1.track_name)
         result = ["Wonderwall"]
         assert_equal(result, @room1.song_list)
     end
