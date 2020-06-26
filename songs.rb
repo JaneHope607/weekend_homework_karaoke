@@ -6,5 +6,4 @@ class Songs
         @track_name = track_name
     end
 
-
 end

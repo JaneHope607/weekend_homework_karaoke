@@ -30,6 +30,7 @@ class Rooms
     def check_in_guests(guest, room)
         if guest_can_afford(guest, room)
             @guests.push(guest)
+            guest.pay_for_room(room)
         end
         return "Sorry this rooms is unavailable for you."
     end
@@ -38,7 +39,8 @@ class Rooms
         @guests.delete(guest)
     end
 
-    # def check_capacity
-    # end
+    def has_capacity
+        return @guests.length < @capacity
+    end
 
 end

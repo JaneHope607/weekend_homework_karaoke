@@ -14,7 +14,7 @@ class Guests
     end
 
     def sufficient_funds(room)
-        return money >= room.price()
+        return @money >= room.price
     end
 
 end

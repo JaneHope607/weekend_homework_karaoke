@@ -55,4 +55,8 @@ class RoomsTest < MiniTest::Test
         assert_equal(1, @room1.count_guests())
     end
 
+    def test_has_capacity__true
+        assert_equal(true, @room1.has_capacity)
+    end
+
 end
