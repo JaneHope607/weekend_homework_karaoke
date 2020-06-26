@@ -8,12 +8,25 @@ class RoomsTest < MiniTest::Test
 
 
     def setup
-        @room1 = Room.new("Superstar", 15, 5)
-        @room2 = Room.new("Queen", 20, 10)
-        @room3 = Room.new("Rockstar", 25, 15)
+        @room1 = Room.new("Superstar", 15, 5, @song_list, @people)
+        @room2 = Room.new("Queen", 20, 10, @song_list, @people)
+        @room3 = Room.new("Rockstar", 25, 15, @song_list, @people)
+
+        @guest1 = Guests.new("Jess", 15)
+        @guest2 = Guests.new("Robert", 50)
+        @guest3 = Guests.new("Louis", 30)
+
+        @song1 = Songs.new("Wonderwall")
+        @song2 = Songs.new("Fernando")
+        @song3 = Songs.new("Dancing Queen")
 
     end
 
+    def test test_add_more_songs
+        @room1.add_more_songs(@song1)
+        result = ["Wonderwall"]
+        assert_equal(result, @room1.song_list)
+    end
 
 
 end

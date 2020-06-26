@@ -8,11 +8,12 @@ class SongsTest < MiniTest::Test
 
 
     def setup
-        @song1 = Song.new()
-        @song2 = Song.new()
-        @song3 = Song/new()
+        @song1 = Songs.new("Wonderwall")
+        @song2 = Songs.new("Fernando")
+        @song3 = Songs.new("Dancing Queen")
     end
 
+    
 
 
 end
