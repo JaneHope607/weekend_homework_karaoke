@@ -8,7 +8,7 @@ class Guests
     end
 
     def pay_for_room(room)
-        if sufficient_funds?(room)
+        if sufficient_funds(room)
             @money -= room.price()
         end
     end
