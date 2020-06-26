@@ -11,20 +11,20 @@ class Rooms
         @guests = []
     end
 
+    def add_more_songs(song)
+       @song_list.push(song)
+    end
+
+    def count_songs()
+        @song_list.size
+    end
+
     def check_in_guest(guest)
 
     end
 
     def check_out_guest(guest)
 
-    end
-
-    def add_more_songs(song)
-       @song_list.push(song)
-    end
-
-    def count_songs()
-        @songs.size
     end
 
 end
