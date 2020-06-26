@@ -59,4 +59,10 @@ class RoomsTest < MiniTest::Test
         assert_equal(true, @room1.has_capacity)
     end
 
+    def test_has_capacity__false
+        @room1.check_in_guests(@guest2, @room1)
+        @room1.check_in_guests(@guest3, @room1)
+        assert_equal(false, @room1.has_capacity)
+    end
+
 end
