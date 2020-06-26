@@ -20,17 +20,21 @@ class RoomsTest < MiniTest::Test
         @song2 = Songs.new("Fernando")
         @song3 = Songs.new("Dancing Queen")
 
-        @song_list = [@song1, @song2, @song3]
-    end
-
-    def test_add_more_songs
-        @room1.add_more_songs(@song1)
-        result = ["Wonderwall"]
-        assert_equal(result, @room1.song_list)
     end
 
     def test_count_guests
         assert_equal(0, @room2.count_guests())
+    end
+
+    def test_count_songs
+        @room1.add_songs(@song2)
+        assert_equal(1, @room1.count_songs())
+    end
+
+    def test_add_songs
+        @room1.add_songs(@song1)
+        result = ["Wonderwall"]
+        assert_equal(result, @room1.song_list)
     end
 
 end
