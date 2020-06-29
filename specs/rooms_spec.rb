@@ -12,9 +12,9 @@ class RoomsTest < MiniTest::Test
         @room1 = Rooms.new("Superstar", 15, 2, @song_list, @guests)
         @room2 = Rooms.new("Queen", 20, 3, @song_list, @guests)
 
-        @guest1 = Guests.new("Jess", 15)
-        @guest2 = Guests.new("Robert", 50)
-        @guest3 = Guests.new("Louis", 30)
+        @guest1 = Guests.new("Jess", 15, "Wonderwall")
+        @guest2 = Guests.new("Robert", 50, "Hallelujah")
+        @guest3 = Guests.new("Louis", 30, "Jump")
 
         @song1 = Songs.new("Wonderwall")
         @song2 = Songs.new("Fernando")
@@ -63,6 +63,14 @@ class RoomsTest < MiniTest::Test
         @room1.check_in_guests(@guest2, @room1)
         @room1.check_in_guests(@guest3, @room1)
         assert_equal(false, @room1.has_capacity)
+    end
+    
+    def test_song_in_playlist__false
+        assert_equal(false, @room1.song_in_playlist(@song1))
+    end
+
+    def test_song_in_playlist__true
+        assert_equal
     end
 
 end

@@ -43,4 +43,8 @@ class Rooms
         return @guests.length < @capacity
     end
 
+    def song_in_playlist(song)
+        return @song_list.include?(song)
+    end
+
 end

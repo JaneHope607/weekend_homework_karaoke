@@ -1,6 +1,6 @@
 class Guests
 
-    attr_reader :name, :money, favourite_song
+    attr_reader :name, :money, :favourite_song
 
     def initialize(name, money, favourite_song)
         @name = name
@@ -17,5 +17,13 @@ class Guests
     def sufficient_funds(room)
         return @money >= room.price
     end
+
+    # def favourite_song_present(room)
+    #     if room.song_list.include?(@favourite_song)
+    #         p "Woo this is my favourite song!"
+    #     else
+    #         p "Aw no!"
+    #     end
+    # end
 
 end
