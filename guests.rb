@@ -18,12 +18,12 @@ class Guests
         return @money >= room.price
     end
 
-    # def favourite_song_present(room)
-    #     if room.song_list.include?(@favourite_song)
-    #         p "Woo this is my favourite song!"
-    #     else
-    #         p "Aw no!"
-    #     end
-    # end
+    def favourite_song_present(room)
+        if room.song_in_playlist(@favourite_song)
+            return "Woo this is my favourite song!"
+        else
+            return "Aw no that sucks!"
+        end
+    end
 
 end
