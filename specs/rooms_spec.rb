@@ -70,7 +70,8 @@ class RoomsTest < MiniTest::Test
     end
 
     def test_song_in_playlist__true
-        assert_equal
+        @room1.add_songs(@song2)
+        assert_equal(true, @room1.song_in_playlist(@song2))
     end
 
 end
